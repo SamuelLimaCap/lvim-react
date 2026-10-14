@@ -1,0 +1,12 @@
+return {
+  "nvim-mini/mini.surround",
+  opts = {
+    mappings = {
+      add = "gza", -- Add surrounding in Normal and Visual modes
+      delete = "gzd", -- Delete surrounding
+      find = "gzf", -- Find surrounding (to the right)
+      find_left = "gzF", -- Find surrounding (to the left)
+      highlight = "gzh", -- Highlight surrounding
+    },
+  },
+}

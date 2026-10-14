@@ -1,0 +1,6 @@
+{
+  "react-divClassName": {
+    "prefix": "divr",
+    "body": ["<div className=\"${1:MyCustom}\">", "", "</div>"]
+  }
+}
