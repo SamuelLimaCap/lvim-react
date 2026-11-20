@@ -6,6 +6,19 @@ vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
 vim.opt.clipboard = "unnamedplus"
+
+-- Clipboard via OSC 52 (o terminal copia/cola; funciona também por SSH).
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
 vim.opt.number = true
 vim.opt.title = true
 vim.opt.autoindent = true
@@ -43,6 +56,11 @@ vim.filetype.add({
     CPY = "cobol",
   },
 })
+
+-- Corretor: desligado por padrão (:Corretor liga); quando ligado, inglês e português
+vim.opt.spelllang = { "en", "pt_br" }
+vim.opt.spellcapcheck = ""
+vim.opt.spelloptions:append("camel")
 
 --undercurl in wezterm terminal
 

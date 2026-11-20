@@ -72,3 +72,6 @@ local function copiar_caminho()
 end
 vim.keymap.set("n", "<leader>fy", copiar_caminho, { desc = "Copiar caminho absoluto do arquivo" })
 vim.keymap.set("n", "<C-S-c>", copiar_caminho, { desc = "Copiar caminho absoluto do arquivo" })
+
+-- arquivos fora do ~/.config (padrão em todas as configs)
+require("externos").setup()
